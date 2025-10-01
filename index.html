@@ -229,6 +229,8 @@
             max-width: 100%;
             height: auto;
             animation: float 5s ease-in-out infinite;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
         @keyframes float {
@@ -366,10 +368,73 @@
             font-size: 14px;
         }
 
+        /* Product Gallery Section */
+        .product-gallery {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 300px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .gallery-overlay p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
         /* Product Details Section */
         .product-details {
             padding: 80px 0;
-            background-color: white;
+            background-color: var(--light-gray);
         }
 
         .details-container {
@@ -680,7 +745,7 @@
                 font-size: 20px;
             }
 
-            .features, .variants, .product-details, .testimonials, .cta {
+            .features, .variants, .product-gallery, .product-details, .testimonials, .cta {
                 padding: 60px 0;
             }
 
@@ -723,6 +788,10 @@
             .variant-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -738,6 +807,7 @@
                 <ul>
                     <li><a href="#home">Beranda</a></li>
                     <li><a href="#features">Fitur</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
                     <li><a href="#variants">Varian</a></li>
                     <li><a href="#details">Detail</a></li>
                     <li><a href="#testimonials">Testimoni</a></li>
@@ -766,7 +836,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://s.shopee.co.id/7Ko13DqwsI" alt="Flaire Charm - Stylish Eyewear Holder">
+                <img src="https://github.com/rickthor7/flairecharm/blob/0597952db2eafc15584bf233a0fe85c8ed17d171/1759331135229.jpg" alt="Flaire Charm - Stylish Eyewear Holder">
             </div>
         </div>
     </section>
@@ -783,4 +853,327 @@
                     <h3>Praktis & Anti Ribet</h3>
                     <p>Pasang sekali, siap dipakai kapan saja. Tidak perlu repot lagi mencari tempat untuk kacamata Anda.</p>
                 </div>
-        
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Desain Stylish</h3>
+                    <p>Menjadi aksesori cantik yang menambah gaya pada tas Anda. Desain minimalis yang elegan untuk berbagai kesempatan.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Multifungsi</h3>
+                    <p>Bisa untuk kacamata, masker, atau gantungan kecil lainnya. Sangat serbaguna untuk kebutuhan sehari-hari.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Perlindungan Maksimal</h3>
+                    <p>Menjaga kacamata Anda dari goresan dan kerusakan. Dengan Flaire Charm, kacamata Anda selalu aman dan mudah dijangkau.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery Section -->
+    <section class="product-gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeri Produk</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://z-cdn-media.chatglm.cn/files/84f4a867-5725-4fef-8b35-347b26d30305_IMG-20251001-WA0307.jpg?auth_key=1790866956-93f43055045441ec9f7927ad60c27c76-0-0b055548a0bab4f9e3a52523ef3b5298" alt="Flaire Charm Collection">
+                    <div class="gallery-overlay">
+                        <h3>Koleksi Lengkap</h3>
+                        <p>4 varian warna elegan</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://z-cdn-media.chatglm.cn/files/3eff0192-900e-4ec5-9bbe-fa8822b573bc_IMG-20251001-WA0307.jpg?auth_key=1790866956-4ddd02622b02470cbb5166e9780d1940-0-818a2c122686841bfbc9ba88b81bf81e" alt="Flaire Charm Detail">
+                    <div class="gallery-overlay">
+                        <h3>Detail Premium</h3>
+                        <p>Kualitas jahitan dan material terbaik</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Flaire Charm in Use">
+                    <div class="gallery-overlay">
+                        <h3>Praktis Digunakan</h3>
+                        <p>Cukup kaitkan pada tas favorit Anda</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1543168268-75a9229c6dab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Flaire Charm with Bag">
+                    <div class="gallery-overlay">
+                        <h3>Gaya dan Fungsi</h3>
+                        <p>Aksesori yang mempercantik tas Anda</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Variants Section -->
+    <section class="variants" id="variants">
+        <div class="container variants-container">
+            <h2 class="section-title">Pilih Varian Warna Favorit Anda</h2>
+            <div class="variant-grid">
+                <div class="variant-card active" data-variant="beige">
+                    <div class="variant-color color-beige">
+                        <i class="fas fa-glasses" style="color: #8B4513;"></i>
+                    </div>
+                    <div class="variant-name">Beige</div>
+                    <div class="variant-code">FC-001</div>
+                </div>
+                <div class="variant-card" data-variant="brown">
+                    <div class="variant-color color-brown">
+                        <i class="fas fa-glasses" style="color: #f5f5dc;"></i>
+                    </div>
+                    <div class="variant-name">Brown</div>
+                    <div class="variant-code">FC-002</div>
+                </div>
+                <div class="variant-card" data-variant="black">
+                    <div class="variant-color color-black">
+                        <i class="fas fa-glasses" style="color: #ffffff;"></i>
+                    </div>
+                    <div class="variant-name">Black</div>
+                    <div class="variant-code">FC-003</div>
+                </div>
+                <div class="variant-card" data-variant="dark-brown">
+                    <div class="variant-color color-dark-brown">
+                        <i class="fas fa-glasses" style="color: #f5f5dc;"></i>
+                    </div>
+                    <div class="variant-name">Dark Brown</div>
+                    <div class="variant-code">FC-004</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Section -->
+    <section class="product-details" id="details">
+        <div class="container">
+            <h2 class="section-title">Detail Produk</h2>
+            <div class="details-container">
+                <div class="details-image">
+                    <img src="https://github.com/rickthor7/flairecharm/blob/0597952db2eafc15584bf233a0fe85c8ed17d171/1759331135229.jpg" alt="Flaire Charm Details">
+                </div>
+                <div class="details-content">
+                    <h2>Flaire Charm - Stylish Eyewear Holder</h2>
+                    <p>Flaire Charm adalah solusi praktis untuk Anda yang sering kehilangan atau khawatir kacamata kesayangan tergores. Dengan desain yang elegan dan fungsional, Flaire Charm dapat dengan mudah dikaitkan pada tas, dompet, atau gantungan kunci Anda.</p>
+                    <p>Terbuat dari bahan kulit premium yang tahan lama dan nyaman digunakan. Setiap detail dibuat dengan presisi untuk memastikan kacamata Anda tetap aman dan terlindungi.</p>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check-circle"></i> Material kulit sintetis premium</li>
+                        <li><i class="fas fa-check-circle"></i> Dilengkapi dengan pengait logam yang kuat</li>
+                        <li><i class="fas fa-check-circle"></i> Desain minimalis dan elegan</li>
+                        <li><i class="fas fa-check-circle"></i> Tersedia dalam 4 pilihan warna menarik</li>
+                        <li><i class="fas fa-check-circle"></i> Ukuran compact dan ringan</li>
+                        <li><i class="fas fa-check-circle"></i> Mudah dibersihkan dan dirawat</li>
+                    </ul>
+                    <a href="#" class="btn" id="buyNowBtn2">Beli Sekarang - Rp 89.000</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Apa Kata Mereka</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Flaire Charm sangat membantu! Saya tidak perlu lagi khawatir kehilangan kacamata saya. Desainnya juga cantik dan cocok dengan tas saya."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="User" class="author-image">
+                        <div class="author-info">
+                            <h4>Maya Putri</h4>
+                            <p>Profesional Muda</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Saya sudah membeli 4 warna sekaligus! Kualitasnya sangat bagus dan bahannya terasa premium. Recommended banget!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="author-image">
+                        <div class="author-info">
+                            <h4>Sarah Wijaya</h4>
+                            <p>Ibu Rumah Tangga</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Sebagai pengguna kacamata setiap hari, Flaire Charm membuat hidup saya lebih mudah. Praktis dan stylish!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="User" class="author-image">
+                        <div class="author-info">
+                            <h4>Budi Santoso</h4>
+                            <p>Eksekutif Bisnis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Dapatkan Flaire Charm Sekarang Juga!</h2>
+            <p>Jangan lewatkan kesempatan untuk memiliki aksesori praktis yang akan membuat hidup Anda lebih mudah dan gaya. Dapatkan Flaire Charm dengan harga terbaik!</p>
+            <a href="#" class="btn btn-cta" id="buyNowBtn3">Beli Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Flaire Charm</h3>
+                    <p>Menyediakan aksesori kacamata stylish dan fungsional untuk gaya hidup modern Anda.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/flairecharm" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://shopee.co.id/flairecharm" target="_blank"><i class="fas fa-shopping-bag"></i></a>
+                        <a href="mailto:flairecharm@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#features">Fitur</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#variants">Varian</a></li>
+                        <li><a href="#details">Detail</a></li>
+                        <li><a href="#testimonials">Testimoni</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Bantuan</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Pengiriman</a></li>
+                        <li><a href="#">Pengembalian</a></li>
+                        <li><a href="#">Cara Pemesanan</a></li>
+                        <li><a href="#">Metode Pembayaran</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Kontak</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> flairecharm@gmail.com</li>
+                        <li><i class="fab fa-instagram"></i> @flairecharm</li>
+                        <li><i class="fas fa-shopping-bag"></i> Shopee: Flaire Charm</li>
+                        <li><i class="fas fa-clock"></i> Senin-Sabtu: 9AM-5PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Flaire Charm. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Flaire Charm berhasil ditambahkan ke keranjang!</span>
+    </div>
+
+    <script>
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Variant Selection
+        const variantCards = document.querySelectorAll('.variant-card');
+        let selectedVariant = 'beige';
+
+        variantCards.forEach(card => {
+            card.addEventListener('click', function() {
+                variantCards.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                selectedVariant = this.dataset.variant;
+            });
+        });
+
+        // Add to Cart
+        const buyNowBtns = document.querySelectorAll('#buyNowBtn, #buyNowBtn2, #buyNowBtn3');
+        const cartCount = document.querySelector('.cart-count');
+        const notification = document.getElementById('notification');
+        let count = 0;
+
+        buyNowBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                count++;
+                cartCount.textContent = count;
+                
+                // Show notification
+                notification.classList.add('show');
+                
+                // Hide notification after 3 seconds
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            });
+        });
+
+        // Cart Icon Click
+        document.querySelector('.cart-icon').addEventListener('click', function() {
+            if (count > 0) {
+                alert(`Anda memiliki ${count} Flaire Charm di keranjang. Varian yang dipilih: ${selectedVariant}. Fitur checkout akan segera hadir!`);
+            } else {
+                alert('Keranjang Anda masih kosong. Tambahkan produk terlebih dahulu!');
+            }
+        });
+    </script>
+</body>
+</html>
